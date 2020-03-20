@@ -41,6 +41,7 @@ Diff.prototype = {
 
     // Main worker method. checks all permutations of a given edit length for acceptance.
     function execEditLength() {
+      console.log("execEditLength");
       for (let diagonalPath = -1 * editLength; diagonalPath <= editLength; diagonalPath += 2) {
         let basePath;
         let addPath = bestPath[diagonalPath - 1],
@@ -113,6 +114,7 @@ Diff.prototype = {
   },
 
   pushComponent(components, added, removed) {
+    console.log('pushComponent');
     let last = components[components.length - 1];
     if (last && last.added === added && last.removed === removed) {
       // We need to clone here as the component clone operation is just
@@ -123,6 +125,7 @@ Diff.prototype = {
     }
   },
   extractCommon(basePath, newString, oldString, diagonalPath) {
+    console.log('extractCommon');
     let newLen = newString.length,
         oldLen = oldString.length,
         newPos = basePath.newPos,
@@ -172,6 +175,7 @@ Diff.prototype = {
 };
 
 function buildValues(diff, components, newString, oldString, useLongestToken) {
+  console.log('buildValues');
   let componentPos = 0,
       componentLen = components.length,
       newPos = 0,
