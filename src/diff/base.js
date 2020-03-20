@@ -76,6 +76,10 @@ Diff.prototype = {
         oldPos = self.extractCommon(basePath, newString, oldString, diagonalPath);
 
         // If we have hit the end of both strings, then we are done
+        console.log("basePath.newPos", basePath.newPos);
+        console.log("basePath.newLen", basePath.newLen);
+        console.log("oldPos", oldPos);
+        console.log("oldLen", oldLen);
         if (basePath.newPos + 1 >= newLen && oldPos + 1 >= oldLen) {
           return done(buildValues(self, basePath.components, newString, oldString, self.useLongestToken));
         } else {
