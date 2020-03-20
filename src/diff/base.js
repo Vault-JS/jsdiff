@@ -2,6 +2,7 @@ export default function Diff() {}
 
 Diff.prototype = {
   diff(oldString, newString, options = {}) {
+    console.log('top of diff');
     let callback = options.callback;
     if (typeof options === 'function') {
       callback = options;

@@ -30,6 +30,7 @@ lineDiff.tokenize = function(value) {
 
 export function diffLines(oldStr, newStr, callback) { return lineDiff.diff(oldStr, newStr, callback); }
 export function diffTrimmedLines(oldStr, newStr, callback) {
+  console.log('JSDIFF: START');
   let options = generateOptions(callback, {ignoreWhitespace: true});
   return lineDiff.diff(oldStr, newStr, options);
 }
