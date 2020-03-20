@@ -42,7 +42,7 @@ Diff.prototype = {
 
     // Main worker method. checks all permutations of a given edit length for acceptance.
     function execEditLength() {
-      console.log("execEditLength");
+      console.log('execEditLength');
       for (let diagonalPath = -1 * editLength; diagonalPath <= editLength; diagonalPath += 2) {
         let basePath;
         let addPath = bestPath[diagonalPath - 1],
